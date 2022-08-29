@@ -10,13 +10,17 @@ join despesas_contratadas_candidatos dcc on
 where
 	cc."DS_CARGO" in ('DEPUTADO ESTADUAL', 'DEPUTADO FEDERAL', 'SENADOR')
 	and cc."DS_SITUACAO_CANDIDATURA" = 'APTO'
-	and cc."DS_SIT_TOT_TURNO" in ('ELEITO', 'ELEITO POR M…DIA', 'ELEITO POR QP', 'N√O ELEITO')
-	and cc."DS_COR_RACA" <> 'N√O DIVULG¡VEL'
+	and cc."DS_SIT_TOT_TURNO" in ('ELEITO', 'ELEITO POR M√âDIA', 'ELEITO POR QP', 'N√ÉO ELEITO')
+	and cc."DS_COR_RACA" <> 'N√ÉO DIVULG√ÅVEL'
 group by
 	cc."SQ_CANDIDATO", 
 	cc."NM_CANDIDATO",
 	cc."DS_SIT_TOT_TURNO";
 	
+
+------------------------------------------------------------------
+
+
 select
 	distinct cc."DS_SIT_TOT_TURNO"
 from
@@ -33,7 +37,7 @@ from
 where
 	"DS_CARGO"  in ('DEPUTADO ESTADUAL', 'DEPUTADO FEDERAL')
 	and "DS_SITUACAO_CANDIDATURA"  in ('APTO')
-	and "DS_SIT_TOT_TURNO"  in ('ELEITO POR M…DIA', 'ELEITO POR QP', 'N√O ELEITO')
+	and "DS_SIT_TOT_TURNO"  in ('ELEITO', 'ELEITO POR M√âDIA', 'ELEITO POR QP')
 	and "NM_URNA_CANDIDATO"  like any (array[
 		'%DOUTOR%',
 		'%DR %',
@@ -59,8 +63,8 @@ join despesas_contratadas_candidatos dcc on
 where
 	cc."DS_CARGO" in ('DEPUTADO ESTADUAL', 'DEPUTADO FEDERAL', 'SENADOR')
 	and cc."DS_SITUACAO_CANDIDATURA" = 'APTO'
-	and cc."DS_SIT_TOT_TURNO" in ('ELEITO', 'ELEITO POR M…DIA', 'ELEITO POR QP', 'N√O ELEITO')
-	and cc."DS_COR_RACA" <> 'N√O DIVULG¡VEL'
+	and cc."DS_SIT_TOT_TURNO" in ('ELEITO', 'ELEITO POR M√âDIA', 'ELEITO POR QP', 'N√ÉO ELEITO')
+	and cc."DS_COR_RACA" <> 'N√ÉO DIVULG√ÅVEL'
 	and "NM_URNA_CANDIDATO" like any (array[
 	'%AGT.%',
 	'%BOMBEIRO%',
