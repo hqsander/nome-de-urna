@@ -1,1 +1,5 @@
-# ANÁLISE DE IMPACTO DO NOME DE URNA NAS ELEIÇÕES DE 2018
+# TCC - Ciência de Dados e Big Data
+## Análise de Impacto do Nome de Urna nas Eleições de 2018
+
+Link da apresentação:
+https://youtu.be/G9MUnkxhz5s
